@@ -39,7 +39,7 @@ export const TypographicCenterpiece3D: React.FC<TypographicCenterpiece3DProps> =
   const isDragging = useRef<boolean>(false);
   const lastPointer = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const dragDistance = useRef<number>(0);
-  const clickTimer = useRef<NodeJS.Timeout | null>(null);
+  const clickTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Animation frame reference
   const animationFrameId = useRef<number | null>(null);
@@ -475,6 +475,7 @@ export const TypographicCenterpiece3D: React.FC<TypographicCenterpiece3DProps> =
     return () => {
       window.removeEventListener('resize', handleResize);
       if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+      if (clickTimer.current) clearTimeout(clickTimer.current);
       renderer.dispose();
       slicePlaneGeo.dispose();
       if (frontMaterialRef.current) frontMaterialRef.current.dispose();
