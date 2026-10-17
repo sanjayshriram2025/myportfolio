@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #F2EBDD;
+  --color-canvas-subtle: #ECE4D4;
+  --color-canvas-card: #FAF6EE;
+  --color-canvas-pure: #FFFFFF;
+  --color-border: #D8CEBA;
+  --color-border-subtle: #E8E0D0;
+  --color-border-dark: #242424;
+
+  --color-oxblood: #9E2939;
+  --color-oxblood-dark: #7A1E2C;
+  --color-cobalt: #2448C5;
+  --color-cobalt-dark: #193496;
+  --color-brass: #D5A65A;
+  --color-brass-dark: #B2863F;
+
+  --color-ink: #242424;
+  --color-ink-secondary: #5A5954;
+  --color-ink-muted: #8A8981;
+  --color-ink-light: #F2EBDD;
+
+  --font-display: 'Anton', 'Barlow Condensed', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', Menlo, Consolas, monospace;
+  --font-tamil: 'Noto Sans Tamil', -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --text-hero: clamp(3.75rem, 9.5vw, 8.5rem);
+    --text-section-title: clamp(2.25rem, 5.5vw, 4.5rem);
+    --text-subhead: clamp(1.15rem, 2.5vw, 1.85rem);
+    --text-body: 0.95rem;
+    --text-meta: 0.75rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F2EBDD;
+    color: #242424;
+  }
+
+  body {
+    background-color: #F2EBDD;
+    color: #242424;
+    overflow-x: hidden;
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #9E2939;
+    color: #F2EBDD;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2448C5;
+    outline-offset: 3px;
+  }
+
+  p {
+    color: #5A5954;
+    line-height: 1.68;
+    max-width: 68ch;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: #242424;
+    letter-spacing: -0.03em;
+    line-height: 1.0;
+  }
+}
+
+/* Typography Hierarchy & Roles */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  line-height: 0.92;
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.font-mono-meta {
+  font-family: var(--font-mono);
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-tamil {
+  font-family: var(--font-tamil);
+  letter-spacing: -0.01em;
+}
+
+/* Studio Warm Paper Plates */
+.studio-plate {
+  background-color: #FAF6EE;
+  border: 1px solid #D8CEBA;
+}
+
+.studio-plate-elevated {
+  background-color: #FAF6EE;
+  border: 1px solid #D8CEBA;
+  box-shadow: 0 10px 30px rgba(36, 36, 36, 0.06);
+}
+
+.studio-hairline {
+  border-color: #D8CEBA;
+}
+
+/* Photographic Presentation — Warm Archival Exhibition Clarity */
+.photo-exhibition {
+  filter: contrast(102%) brightness(98%) saturate(98%);
+  transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-exhibition:hover {
+  filter: contrast(106%) brightness(101%) saturate(104%);
+}
+
+/* 3D Perspective Preservation */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1400 {
+  perspective: 1400px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Minimal Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2EBDD;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CEBA;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9E2939;
+}
